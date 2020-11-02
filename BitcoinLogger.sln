@@ -3,7 +3,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitcoinLogger.Entites", "BitcoinLogger.Entites\BitcoinLogger.Entites.csproj", "{ED1A90EA-B361-49EB-916C-1E3BACC2AA72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitcoinLogger.Services", "BitcoinLogger.Services\BitcoinLogger.Services.csproj", "{4B2677E2-BB81-4755-A65A-506E2F3CF93B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitcoinLogger.Web", "BitcoinLogger.Web\BitcoinLogger.Web.csproj", "{4C1EDC90-532E-4724-A674-B754FFFC6E25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitcoinLogger.Web.Tests", "BitcoinLogger.Web.Tests\BitcoinLogger.Web.Tests.csproj", "{DD7D5F19-815B-4D15-93B1-E1193DF6E247}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED1A90EA-B361-49EB-916C-1E3BACC2AA72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED1A90EA-B361-49EB-916C-1E3BACC2AA72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED1A90EA-B361-49EB-916C-1E3BACC2AA72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED1A90EA-B361-49EB-916C-1E3BACC2AA72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B2677E2-BB81-4755-A65A-506E2F3CF93B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B2677E2-BB81-4755-A65A-506E2F3CF93B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B2677E2-BB81-4755-A65A-506E2F3CF93B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B2677E2-BB81-4755-A65A-506E2F3CF93B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C1EDC90-532E-4724-A674-B754FFFC6E25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C1EDC90-532E-4724-A674-B754FFFC6E25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C1EDC90-532E-4724-A674-B754FFFC6E25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C1EDC90-532E-4724-A674-B754FFFC6E25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD7D5F19-815B-4D15-93B1-E1193DF6E247}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD7D5F19-815B-4D15-93B1-E1193DF6E247}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD7D5F19-815B-4D15-93B1-E1193DF6E247}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD7D5F19-815B-4D15-93B1-E1193DF6E247}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
