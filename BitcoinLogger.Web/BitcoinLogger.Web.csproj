@@ -182,6 +182,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BitcoinEntryController.cs" />
+    <Compile Include="Controllers\BitstampController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -198,6 +199,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\custom\dataTables.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -205,6 +207,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\custom\dataTables.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -250,7 +253,8 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\BitcoinEntry\Index.cshtml" />
-    <Content Include="Views\BitcoinEntry\View.cshtml" />
+    <Content Include="Views\BitcoinEntry\All.cshtml" />
+    <Content Include="Views\Bitstamp\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -269,6 +273,10 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BitcoinLogger.Database\BitcoinLogger.Database.csproj">
+      <Project>{7CAA07AD-2185-43EC-9BBB-46A40BC7BAD6}</Project>
+      <Name>BitcoinLogger.Database</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BitcoinLogger.Entites\BitcoinLogger.Entites.csproj">
       <Project>{ed1a90ea-b361-49eb-916c-1e3bacc2aa72}</Project>
       <Name>BitcoinLogger.Entites</Name>

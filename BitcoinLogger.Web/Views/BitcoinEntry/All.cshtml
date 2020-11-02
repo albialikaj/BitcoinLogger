@@ -1,0 +1,49 @@
+﻿@model IEnumerable<BitcoinLogger.Entites.BitcoinEntry>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Bitcoin Price</h2>
+
+
+
+
+<table id="BitcoinPricelistTable" class="display">
+
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Source)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+ 
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>@item.Source</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                <a href="#">Comment</a>
+                </td>
+            </tr>
+        }
+</tbody>
+</table>
+

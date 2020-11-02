@@ -12,14 +12,22 @@ namespace BitcoinLogger.Web.Controllers
     public class BitcoinEntryController : Controller
     {
         // GET: BitcoinEntry
-        public async Task<ActionResult> Index()
+        public ActionResult  Index()
+        {
+        
+
+            return View();
+        }
+
+        [Authorize]
+        public async Task<ActionResult> All()
         {
             ApiService repository = new ApiService();
             List<BitcoinEntry> coins = new List<BitcoinEntry>();
 
             BitcoinEntry Gdax = await repository.GetGdaxAsync();
-            BitcoinEntry Bitstamp =  await repository.GetBitstampAsync();     
-            BitcoinEntry Coindesk =  await repository.GetCoindeskAsync();
+            BitcoinEntry Bitstamp = await repository.GetBitstampAsync();
+            BitcoinEntry Coindesk = await repository.GetCoindeskAsync();
 
             coins.Add(Bitstamp);
             coins.Add(Gdax);
@@ -27,5 +35,26 @@ namespace BitcoinLogger.Web.Controllers
 
             return View(coins);
         }
+
+
+        public async Task<ActionResult> Details(string source) {
+
+
+            ApiService repository = new ApiService();
+            List<BitcoinEntry> coins = new List<BitcoinEntry>();
+
+            BitcoinEntry Gdax = await repository.GetGdaxAsync();
+            BitcoinEntry Bitstamp = await repository.GetBitstampAsync();
+            BitcoinEntry Coindesk = await repository.GetCoindeskAsync();
+
+            coins.Add(Bitstamp);
+            coins.Add(Gdax);
+            coins.Add(Coindesk);
+            
+
+            return View(coins.Where(p=>p.Source == source).ToList());
+
+        }
+
     }
 }

@@ -6,6 +6,8 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using BitcoinLogger.Web.Models;
+using BitcoinLogger.Database;
+using BitcoinLogger.Entites;
 
 namespace BitcoinLogger.Web
 {
@@ -58,11 +60,11 @@ namespace BitcoinLogger.Web
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "341722324098-21iv44kd9ahrebpc9sr5aht2omhnbh9r.apps.googleusercontent.com",
+                ClientSecret = "Ales4ENVc3ihXLJQJHlYGN4G"
+            });
         }
     }
 }
