@@ -10,7 +10,7 @@ namespace BitcoinLogger.Entites
    
     public class Bitstamp : BitcoinEntry
     {
-        public override string Source { get; set; }
+        public override string Source { get; set; } = "https://www.bitstamp.net/api/ticker/";
         public string volume { get; set; }
 
         [JsonProperty("last")]
@@ -31,21 +31,6 @@ namespace BitcoinLogger.Entites
 
 
 
-
-
-
-        private DateTime _datevalue;
-
-        //public DateTime getSmoething() {
-        //    int temp = Convert.ToInt32(this.Date);
-        //    return new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(temp);
-        //}
-
-        public string dt
-        {
-            get { return _datevalue.ToString(); }
-            set { DateTime.TryParse(this.Date, out _datevalue); }
-        }
 
 
 

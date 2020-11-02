@@ -20,7 +20,6 @@ namespace BitcoinLogger.Entites
         //    }}
 
 
-
         public Time time { get; set; }
         public string disclaimer { get; set; }
         public Bpi bpi { get; set; }

@@ -31,7 +31,7 @@ namespace BitcoinLogger.Services
 
         public Task<Bitstamp> GetBitstampAsync()
         {
-            Bitstamp bitstamp = new Bitstamp();        
+            Bitstamp bitstamp = new Bitstamp();
             return GetAsync<Bitstamp>(bitstamp.Source);
         }
 
