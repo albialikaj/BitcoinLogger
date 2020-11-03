@@ -322,6 +322,7 @@
     <Content Include="Views\Bitcoins\Index.cshtml" />
     <Content Include="Views\Bitcoins\Details.cshtml" />
     <Content Include="Views\Shared\_heroImage.cshtml" />
+    <Content Include="Views\Bitcoins\Delete.cshtml" />
     <None Include="Views\Shared\_navbar.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

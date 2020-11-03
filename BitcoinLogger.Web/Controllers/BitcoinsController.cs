@@ -26,6 +26,7 @@ namespace BitcoinLogger.Web.Controllers
         }
 
 
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -41,6 +42,35 @@ namespace BitcoinLogger.Web.Controllers
             }
             return View(bitcoin);
         }
+
+
+        [Authorize]
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Bitcoin bitcoin = bitcoinRepository.GetById(id);
+            if (bitcoin == null)
+            {
+                return HttpNotFound();
+            }
+            return View(bitcoin);
+        }
+
+
+        // POST: Students/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Bitcoin bitcoin = bitcoinRepository.GetById(id);
+            bitcoinRepository.Delete(bitcoin);
+            return RedirectToAction("Index");
+        }
+
+
 
 
 
@@ -59,6 +89,10 @@ namespace BitcoinLogger.Web.Controllers
             }
             return View(coin);
         }
+
+
+
+
 
     }
 }
