@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
     $('#BitcoinPricelistTable').DataTable(
         {
-            searching: true,
+            searching: false,
             ordering: true
         }
     );

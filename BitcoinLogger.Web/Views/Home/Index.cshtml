@@ -1,29 +1,34 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Bitcoin Logger";
+
 }
 
-<div class="jumbotron">
-    <h1>Bitcoin Logger</h1>
-    <p class="lead">Login to View the full list of bitcoin prices in the market.</p>
-    
+
+<div class="container">
+    <h3>Available Sources</h3>
+    <table class="table">
+
+
+        <tr>
+            <td>Bitstamp</td>
+            <td><a class="btn btn-outline-success btn-sm" href="../Bitstamp/Fetch">Fetch Price</a></td>
+        </tr>
+
+        <tr>
+            <td>Coindesk</td>
+            <td><a class="btn btn-outline-success btn-sm" href="../Coindesk/Fetch">Fetch Price</a></td>
+        </tr>
+
+        <tr>
+            <td>GDAX</td>
+            <td><a class="btn btn-outline-success btn-sm" href="../Gdax/Fetch">Fetch Price</a></td>
+        </tr>
+
+    </table>
+
 </div>
 
-<ul>
-    <li>
-        <a href="../Bitstamp/Fetch">Get Bitcoin Price from Bitstamp</a>
-    </li>
-    <li>
-        <a href="../Coindesk/Fetch">Get Bitcoin Price from Coindesk</a>
-    </li>
 
-    <li>
-        <a href="../Gdax/Fetch">Get Bitcoin Price from GDAX</a>
-    </li>
-</ul>
-
-<hr />
-<center>
-    <a href="../Bitcoins/Index">
-        Click here to see all price entries >
-    </a>
-</center>
+<div class="text-center my-5">
+    <a href="../Bitcoins/Index">See all fetched prices here ❭</a>
+</div>

@@ -4,8 +4,6 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
 <div>
     <h4>Bitcoin</h4>
     <hr />
@@ -36,7 +34,7 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+<p>   
+    <a class="btn btn-primary border" href="../../Home/Index">Fetch other source</a> 
+    <a class="btn btn-secondary border" href="/../Bitcoins/Index">See all fetched data</a>
 </p>

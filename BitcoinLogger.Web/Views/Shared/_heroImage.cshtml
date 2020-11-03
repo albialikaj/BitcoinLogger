@@ -1,0 +1,16 @@
+﻿<div class="hero-img d-flex align-items-center mb-5">   
+
+   
+    <div class="container">
+        <h1>@ViewBag.Title</h1>
+
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <p class="lead">Login and view more bitcoin prices, such user comments, graphs etc.</p>
+            <a class="btn btn-dark" href="../../Account/Login">Get started</a>
+        }
+
+    </div>
+
+
+</div>

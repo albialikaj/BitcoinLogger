@@ -19,6 +19,7 @@ namespace BitcoinLogger.Web.Controllers
         private BitcoinRepository bitcoinRepository = new BitcoinRepository();
 
         // GET: Bitcoins
+        [Authorize]
         public ActionResult Index()
         {
             return View(bitcoinRepository.GetAll().ToList());
