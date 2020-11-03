@@ -13,7 +13,6 @@ namespace BitcoinLogger.Services
     {
 
         public static HttpClient ApiClient = new HttpClient();
-
         static Lazy<HttpClient> http = new Lazy<HttpClient>();
 
         public async Task<T> GetAsync<T>(string url)
@@ -22,49 +21,30 @@ namespace BitcoinLogger.Services
             return JsonConvert.DeserializeObject<T>(json);
         }
 
-        //public Task<Bitstamp> GetBitstampAsync()
-        //{
-        //    var url = "https://www.bitstamp.net/api/ticker/";
-        //    return GetAsync<Bitstamp>(url);
-        //}
-
-
-        public Task<Bitstamp> GetBitstampAsync()
-        {
-            Bitstamp bitstamp = new Bitstamp();
-            return GetAsync<Bitstamp>(bitstamp.Source);
+        public Task<Bitstamp> GetBitstampAsync(string url)
+        {          
+            return GetAsync<Bitstamp>(url);
         }
 
-
-        /// <summary>
-        /// Επιστρέφει ενα διαμορφωμένο object Coindesk Διαμορφωμένο.
-        /// </summary>
-        public async Task<Coindesk> GetCoindeskAsync()
+        public Task<Coindesk> GetCoindeskAsync(string url)
         {
-            Coindesk coindesk = new Coindesk();
-            var model = GetAsync<Coindesk>(coindesk.Source);
-            var result = await model;
-
-            coindesk.Price = result.bpi.usd.rate;
-            coindesk.Date = result.time.updated;
-
-            return coindesk;
+            return GetAsync<Coindesk>(url);
         }
 
 
 
-        public async Task<Gdax> GetGdaxAsync()
+        public async Task<Gdax> GetGdaxAsync(string url)
         {
             ApiClient.DefaultRequestHeaders.Accept.Clear();
             ApiClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
             ApiClient.DefaultRequestHeaders.Add("User-Agent", ".NET Framework Test Client");
-         
+
             Gdax gdax = new Gdax();
-            using (HttpResponseMessage response = await ApiClient.GetAsync(gdax.Source))
+            using (HttpResponseMessage response = await ApiClient.GetAsync(url))
             {
                 if (response.IsSuccessStatusCode)
                 {
-                   gdax = await response.Content.ReadAsAsync<Gdax>();
+                    gdax = await response.Content.ReadAsAsync<Gdax>();
                     return gdax;
                 }
                 else
@@ -75,4 +55,5 @@ namespace BitcoinLogger.Services
         }
 
     }
+
 }

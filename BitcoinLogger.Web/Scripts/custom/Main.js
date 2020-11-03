@@ -18,14 +18,10 @@
             console.log(result);
 
             var nomisma = result["rates"];
-            console.log(nomisma);
 
             exchange_rate = nomisma["USD"];
-            console.log(exchange_rate);
+            console.log("Exchange rate is " + exchange_rate);
 
-            //TEST 
-            console.log(convertPriceToUSD(100));
-            console.log(convertPriceToEUR(100));
         },
         error: function (error) {
             console.log(error);

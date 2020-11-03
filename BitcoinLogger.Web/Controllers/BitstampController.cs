@@ -11,13 +11,26 @@ namespace BitcoinLogger.Web.Controllers
 {
     public class BitstampController : Controller
     {
-        // GET: Bitstamp
-        public async Task<ActionResult> Index()
-        {
-            ApiService repository = new ApiService();
-            BitcoinEntry Bitstamp = await repository.GetBitstampAsync();
-                             
-            return View(Bitstamp);
+
+        //Fetch price
+        public async Task<ActionResult> Fetch(){
+
+            Bitcoin bitcoin = new Bitcoin();
+            BitcoinRepository repo = new BitcoinRepository();
+            ApiService service = new ApiService();
+
+            string url = "https://www.bitstamp.net/api/ticker/";
+            var model = service.GetBitstampAsync(url);
+            var result = await model;
+
+            bitcoin.Source = url;
+            bitcoin.Price = Decimal.Parse(result.ask);
+            bitcoin.Date = DateTime.Now;
+
+           int lastId =  repo.Insert(bitcoin);
+
+           return RedirectToAction("Details", "Bitcoins", new { id = lastId });
+
         }
     }
 }

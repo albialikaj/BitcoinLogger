@@ -2,6 +2,7 @@
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace BitcoinLogger.Database
             return new ApplicationDbContext();
         }
 
-
+        public DbSet<Bitcoin> bitcoins { get; set; }
+       
     }
 }

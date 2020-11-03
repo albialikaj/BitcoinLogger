@@ -8,32 +8,19 @@ using System.Threading.Tasks;
 namespace BitcoinLogger.Entites
 {
    
-    public class Bitstamp : BitcoinEntry
+    public class Bitstamp
     {
-        //Επιστρέφει τιμή σε δολάρια
-        public override string Source { get; set; } = "https://www.bitstamp.net/api/ticker/";
+        public string Source { get; set; }
         public string volume { get; set; }
-
         [JsonProperty("last")]
-        public override decimal Price { get; set ; }
-
-        [JsonProperty("timestamp")]
-        public override string Date { get; set; }
-
+        public decimal Price { get; set ; }
+        [JsonProperty("timestamp")]        
+        public string Date { get; set; }
         public string bid { get; set; }
         public string vwap { get; set; }
         public string high { get; set; }
         public string low { get; set; }
         public string ask { get; set; }
         public string open { get; set; }
-
-
-
-
-
-
-
-
-
     }
 }
