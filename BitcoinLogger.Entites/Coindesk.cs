@@ -8,7 +8,7 @@ namespace BitcoinLogger.Entites
 {
     public class Coindesk : BitcoinEntry
     {
-        public override string Source { get; set; } = "https://api.coindesk.com/v1/bpi/currentprice/EUR.json";
+        public override string Source { get; set; } = "https://api.coindesk.com/v1/bpi/currentprice/USD.json";
         public override decimal Price { get; set; }
 
         public override string Date { get; set; }
@@ -29,7 +29,7 @@ namespace BitcoinLogger.Entites
         {
 
             public USD usd { get; set; }
-            //public eur EUR { get; set; }
+            
         }
 
 

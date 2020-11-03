@@ -7,7 +7,13 @@
 <h2>Bitcoin Price</h2>
 
 
-
+<div class="currency_option">
+    <label for="">Select your Currency</label>
+    <select id="currency">
+        <option value="usd">USD</option>
+        <option value="euro">EUR</option>
+    </select>
+</div>
 
 <table id="BitcoinPricelistTable" class="display">
 
@@ -26,7 +32,7 @@
         </tr>
     </thead>
 
- 
+
     <tbody>
         @foreach (var item in Model)
         {
@@ -34,16 +40,16 @@
             <tr>
                 <td>@item.Source</td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Price)
+                    <span class="price"> @Html.DisplayFor(modelItem => item.Price) </span> <span class="c_sign"></span>
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Date)
                 </td>
                 <td>
-                <a href="#">Comment</a>
+                    <a href="#">Comment</a>
                 </td>
             </tr>
         }
-</tbody>
+    </tbody>
 </table>
 

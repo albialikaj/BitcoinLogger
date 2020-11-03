@@ -10,6 +10,7 @@ namespace BitcoinLogger.Entites
    
     public class Bitstamp : BitcoinEntry
     {
+        //Επιστρέφει τιμή σε δολάρια
         public override string Source { get; set; } = "https://www.bitstamp.net/api/ticker/";
         public string volume { get; set; }
 
