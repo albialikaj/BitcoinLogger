@@ -58,10 +58,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Migrations\202011021827432_FirstMigration.cs" />
-    <Compile Include="Migrations\202011021827432_FirstMigration.Designer.cs">
-      <DependentUpon>202011021827432_FirstMigration.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -74,11 +70,6 @@
       <Project>{ED1A90EA-B361-49EB-916C-1E3BACC2AA72}</Project>
       <Name>BitcoinLogger.Entites</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202011021827432_FirstMigration.resx">
-      <DependentUpon>202011021827432_FirstMigration.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

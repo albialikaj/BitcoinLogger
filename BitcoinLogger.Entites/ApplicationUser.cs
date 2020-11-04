@@ -24,26 +24,5 @@ namespace BitcoinLogger.Entites
 
 
 
-        //public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
-        //{
-        //    // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
-        //    var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
-        //    // Add custom user claims here
-        //    return userIdentity;
-        //}
-
-
-        ////[Display(Name = "First Name")]
-        //public string FirstName { get; set; }
-        ////[Display(Name = "Last Name")]
-        //public string LastName { get; set; }
-        ////[Display(Name = "Date of Birth")]
-        //public DateTime? DateOfBirth { get; set; }
-        //public string City { get; set; }
-
-        ////Navigation Properties
-        //public virtual ICollection<Reservation> Reservations { get; set; }
-
-
     }
 }

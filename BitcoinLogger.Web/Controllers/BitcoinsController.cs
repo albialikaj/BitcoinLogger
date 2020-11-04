@@ -20,9 +20,21 @@ namespace BitcoinLogger.Web.Controllers
 
         // GET: Bitcoins
         [Authorize]
-        public ActionResult Index()
+    
+        public ActionResult Index(string source)
         {
-            return View(bitcoinRepository.GetAll().ToList());
+            var data = bitcoinRepository.GetAll(); 
+            if(string.IsNullOrEmpty(source))
+            {
+                return View(data.ToList()); 
+            }
+            else {
+                return View(data.Where(x => x.Source == source).ToList());
+            }
+                       
+ 
+
+        
         }
 
 

@@ -19,6 +19,7 @@ namespace BitcoinLogger.Database
         }
 
         public DbSet<Bitcoin> bitcoins { get; set; }
+        //public DbSet<Comment> comments { get; set; }
        
     }
 }

@@ -65,6 +65,7 @@
     <Compile Include="Bitcoin.cs" />
     <Compile Include="Bitstamp.cs" />
     <Compile Include="Coindesk.cs" />
+    <Compile Include="Comment.cs" />
     <Compile Include="Gdax.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

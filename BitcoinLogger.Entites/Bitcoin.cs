@@ -12,5 +12,6 @@ namespace BitcoinLogger.Entites
         public string Source { get; set; }
         public decimal Price { get; set; }
         public DateTime? Date { get; set; }
+        //public List<Comment> Comments { get; set; }
     }
 }

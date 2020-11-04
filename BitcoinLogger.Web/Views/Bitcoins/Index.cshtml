@@ -7,54 +7,91 @@
 
 
 
-    <div class="d-flex justify-content-between py-3">
-        <h3>We found @Model.Count() entries</h3>
-        <div class="currency_option">
-            <label for="">Select your Currency</label>
-            <select id="currency">
-                <option value="usd">USD</option>
-                <option value="euro">EUR</option>
-            </select>
-        </div>
+<div class="d-flex justify-content-between py-3">
+    <h3>@Model.Count() entries found</h3>
 
+
+    <div>
+        <form action="../../Bitcoins/Index" method="post">
+
+            <label>Show data onlu from </label>
+            <select name="source">
+                <option value="">
+                    All
+                </option>
+
+                @{
+
+                    var sources = Model.GroupBy(x => x.Source).Select(i => i.First());
+
+
+                    foreach (var optpion in sources)
+                    {
+                        <option value="@optpion.Source">
+
+                            @optpion.Source
+
+                        </option>
+                    }
+
+                }
+
+            </select>
+
+            <input type="submit" value="Filter" />
+
+        </form>
     </div>
+
+
+    <div class="currency_option">
+        <label for="">Select your Currency</label>
+        <select id="currency">
+            <option value="usd">USD</option>
+            <option value="euro">EUR</option>
+        </select>
+    </div>
+
+
+
+</div>
+
 
 
 <table id="BitcoinPricelistTable" class="display">
 
-        <thead>
+    <thead>
+        <tr>
+            <th>
+                Source
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Date
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+
             <tr>
-                <th>
-                  Source
-                </th>
-                <th>
-                    Price
-                </th>
-                <th>
-                    Date
-                </th>
-                <th></th>
+                <td>   @item.Source</td>
+                <td>
+                    <span class="price">    @item.Price </span> <span class="c_sign"></span>
+                </td>
+                <td>
+                    @item.Date.ToString()
+                </td>
+                <td>
+                    <a class="text text-danger" href="../Bitcoins/Delete?id=@item.Id"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                </td>
             </tr>
-        </thead>
-
-
-        <tbody>
-            @foreach (var item in Model)
-            {
-
-                <tr>
-                    <td>   @item.Source</td>
-                    <td>
-                        <span class="price">    @item.Price </span> <span class="c_sign"></span>
-                    </td>
-                    <td>
-                        @item.Date.ToString()
-                    </td>
-                    <td>
-                        <a href="#">Comment</a> | <a class="text text-danger" href="../Bitcoins/Delete?id=@item.Id">Delete</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-
+        }
+    </tbody>
+</table>
